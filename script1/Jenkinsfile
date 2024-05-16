@@ -25,7 +25,7 @@ pipeline {
 
         stage("deploy the app"){
             steps{
-                sh 'java -jar target/bioMedical-0.0.2-SNAPSHOT.jar'
+                sh 'java -jar target/bioMedical-0.0.2-SNAPSHOT.jar &'
             }
         }
 
