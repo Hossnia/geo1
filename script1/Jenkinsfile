@@ -1,15 +1,16 @@
 pipeline {
     agent any
     stages{
-        stage("checkout scm1"){
+        stage("checkout scm"){
             steps {
                 checkout scm
             }
         }
         stage("sonarcloud-analysis"){
             steps{
-                withSonarQubeEnv ('sonarqube')
+                withSonarQubeEnv ('sonarqube'){
                 sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Hossnia_geo1'
+            }
             }
             
         }
