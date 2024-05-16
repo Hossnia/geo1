@@ -23,6 +23,12 @@ pipeline {
             }
         }
 
+        stage("deploy the app"){
+            steps{
+                sh 'java -jar bioMedical-0.0.2-SNAPSHOT.jar'
+            }
+        }
+
         stage("upload artifact"){
             steps{
                 sh 'curl -uadmin:AP8gcgmmset5jeYChTJYDN6XmDd \
